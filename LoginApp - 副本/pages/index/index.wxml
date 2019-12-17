@@ -1,0 +1,27 @@
+<view class="content">
+  <view class="account">
+    <view class="title">账号</view>
+    <view class="num"><input  bindinput="accountInput" placeholder="用户名/邮箱/手机号" placeholder-style="color:#999999;"/></view>
+  </view>
+  <view class="hr"></view>
+   <view class="account">
+    <view class="title">密码</view>
+    <view class="num"><input bindinput="pwdBlur" placeholder="请输入密码"  placeholder-style="color:#999999;"/></view>
+    
+  </view>
+  <view class="hr"></view>
+  <button class="btn" bindtap='login' type="primary">登录</button>
+</view>
+<view class="hr"></view>
+
+<view>{{list.data.userInfo.account}}</view>
+<view>{{list.data.userInfo.email}}</view>
+<view>{{list.data.userInfo.userName}}</view>
+<view>{{list.data.userInfo.lastLoginTime}}</view>
+<view>{{list.data.userInfo.policeType}}</view>
+<view wx:for="{{list.data.userInfo.roleList}}" wx:key="id">
+<view>{{item.description}}</view>
+<view wx:for="{{item.permissions}}" wx:key="id">
+<view>{{item.name}}</view>
+</view>
+</view>
